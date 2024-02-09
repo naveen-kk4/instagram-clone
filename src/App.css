@@ -1,38 +1,123 @@
-.App {
-  text-align: center;
+
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Kavoon&family=Lato&family=Montserrat&family=Mulish&family=Open+Sans:wght@500&family=Protest+Strike&family=Roboto&display=swap');
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.welcome-page{
+ 
+  min-width: 50vw;
+  background: rgb(4,243,216);
+  background: linear-gradient(336deg, rgba(4,243,216,1) 4%, rgba(27,143,119,0.9551470246301645) 92%);
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.signup-login{
+  margin: auto;
+}
+.signup-login>form>input{
+  min-width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  min-height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+}
+.signup-login>form>button{
+ 
+ 
+    background-image: linear-gradient(#0dccea, #0d70ea);
+    border: 0;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: Montserrat,sans-serif;
+    font-size: .9em;
+    margin-inline: 25%;
+    padding: 10px 15px;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  
+}
+.welcome-page>h1{
+  color: white;
+  font-weight: 100px;
+  font-size: 60px;
+  font-family: 'Protest Strike', sans-serif;
+}
+.welcome-page>img{
+  width: 50%;
+  position: absolute;
+  bottom: 0px;
+}
+.leaf{
+  top: 0px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+nav{
+  background-color: white;
+  position: sticky;
+  top: 0px;
+  height: 100px;
+  
+
+}
+.logo>span:nth-child(1){
+   font-weight: bold;
+   font-family: 'Kavoon', sans-serif;
+}
+nav>div>p{
+  padding-inline: 20px;
+  transition: all linear 1s;
+  font-family: 'Lato', sans-serif;
+  font-weight: 40px;
+  font-size: 20px;
+}
+nav>div>p:hover{
+  text-decoration: underline;
+  cursor: pointer;
+  
+}
+
+.hd-text{
+  font-size: 50px;
+  
+  font-family: 'Protest Strike', sans-serif;
+  font-style: italic;
+  position: fixed;
+  top: 350px;
+  left: 25%;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.footer{
+  background-color: white;
+ 
+  height: 80px;
+}
+.footer>div>p{
+  padding-inline: 20px;
+  transition: all linear 1s;
+  font-family: 'Josefin Sans', sans-serif;
+
+  font-weight: 50px;
+  font-size: 18px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer>div>p:hover{
+ color: rgb(186, 178, 178);
+  cursor: pointer;
+  
 }
