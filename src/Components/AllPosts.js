@@ -12,6 +12,8 @@ const AllPosts=()=>{
 
     useEffect( ()=>{
         console.log(token);
+
+        // on page load , fetch the api results and store the result array in data
         axios.get("https://instagram-express-app.vercel.app/api/post/all-posts",{
             headers:{
                 "authorization" : `Bearer ${token}`
@@ -20,6 +22,7 @@ const AllPosts=()=>{
          .then(response =>{
             
             setData(response.data.data);
+            //pageNum is set which is later used for infinite scrolling
             localStorage.setItem("pageNum","10");
             loaderEle.current.style.display = "none";
             setItems(response.data.data.slice(0,10));
@@ -28,6 +31,7 @@ const AllPosts=()=>{
          .catch( err => console.log("Error", err))
     },[])
 
+  // this fn is called as user scrolls down and hence we load more data
     function addData(){
         console.log(items);
         let limit = Number(localStorage.getItem("pageNum"));
@@ -38,6 +42,8 @@ const AllPosts=()=>{
         }
         else setHasMore(false);
     }
+
+
     return(
         <>
        <div className="myProfile-h1"><h2 >ALL POSTS</h2></div> 
@@ -65,6 +71,8 @@ const AllPosts=()=>{
             }
         </InfiniteScroll>    
         </div>
+
+        {/* loader element which is displayed before data is loaded */}
         <section ref={loaderEle} className="sec-loading">
             <div className="one">
             </div>

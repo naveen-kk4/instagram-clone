@@ -4,6 +4,7 @@
 
 
 const Footer = ()=>{
+  //just a static footer
     return(
 
         <div className="d-flex justify-content-between align-items-center footer">
