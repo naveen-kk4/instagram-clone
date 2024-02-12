@@ -195,6 +195,9 @@ nav a:hover::after{
   display: flex;
   align-items: center;
   justify-content: center;
+  position: fixed;
+ 
+  
 }
 
 .sec-loading .one {
@@ -205,6 +208,9 @@ nav a:hover::after{
   border-radius: 0 50% 50% 50%;
   position: relative;
   animation: move 0.5s linear infinite alternate-reverse;
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
 }
 .sec-loading .one::before {
   content: "";

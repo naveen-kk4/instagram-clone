@@ -12,7 +12,8 @@ const Profile = ()=>{
     const[userName,setUserName] = useState("");
     const [posts,setPosts] = useState([]);
     const [updateObj,setUpdateObj] = useState({});
-    const token =  JSON.parse( localStorage.getItem("token"));
+  
+    const token =   localStorage.getItem("token");
     const navigate = useNavigate();
     const loader = useRef();
     
@@ -52,6 +53,8 @@ const Profile = ()=>{
 
    async function handleSubmit(e){
  e.preventDefault();
+ modal.current.style.top="-500px";
+ loader.current.style.display="block";
  
  formData.append("file",imgLink);
    
@@ -69,7 +72,8 @@ try{
    setPosts([...posts,result.data.data]);
    setImgLink("");
    setCaption("");
-   modal.current.style.top="-500px";
+   loader.current.style.display="none";
+   
    
 
 
@@ -114,14 +118,15 @@ catch(error){
 
 
     async function logout(){
-      console.log("I am executing")
+      loader.current.style.display="block";
       try{
           const response = await axios.delete("https://instagram-express-app.vercel.app/api/auth/logout",{
             headers:{
                 "authorization" : `Bearer ${token }`
               }
             })
-            alert("Logout Successful")
+            loader.current.style.display="none";
+            alert("Logout Successful");
             // delete token from localstorage:
             localStorage.removeItem("token")
              navigate("/login")
@@ -155,7 +160,7 @@ catch(error){
     </div>
 
    
-    <button onSubmit={handleSubmit} className="w-100 btn btn-lg" type="submit">Add</button>
+    <button  className="w-100 btn btn-lg" type="submit">Add</button>
   </form>
         <p onClick={()=>{modal.current.style.top = "-500px"}} className="copyright"><img className="copyright" src={close} style={{width:"30px",height:"30px",cursor:"pointer"}}></img></p>
 </main>

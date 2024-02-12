@@ -2,7 +2,6 @@
 import './App.css';
 import Signup from "./Components/SignUp.js"
 import Login from "./Components/Login.js"
-import Dashboard from './Components/Dashboard.js';
 import React,{useState} from "react";
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import "./../node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -13,7 +12,7 @@ import AllPosts from './Components/AllPosts.js';
 import Update from './Components/Update.js';
 
 function App() {
-  const[token,setToken] = useState("");
+  
   return (
     <BrowserRouter >
     <Routes>

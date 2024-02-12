@@ -5,7 +5,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 const AllPosts=()=>{
     const[data,setData]=useState([]);
-    const token = JSON.parse(localStorage.getItem("token"));
+    const token = localStorage.getItem("token");
     const[items,setItems] = useState([]);
     const[hasMore,setHasMore] = useState(true);
     const loaderEle = useRef();

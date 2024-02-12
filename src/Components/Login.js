@@ -47,13 +47,13 @@ const Login = () => {
                
                 
                 // add token to localstorage:
-              
+              console.log(response.data.data.token);
                 setToken(response.data.data.token);
                 localStorage.setItem("token", response.data.data.token)
 
                 setUser({email:"",password:""})
                 // alert("Login Successful")
-                setTimeout(()=>navigate("/home"), 1000)
+                setTimeout(()=>navigate("/home"), 700)
                 // navigate("/dashboard")
               }
             catch(error){
