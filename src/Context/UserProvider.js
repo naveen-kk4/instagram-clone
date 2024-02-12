@@ -3,7 +3,7 @@ import UserContext from "./UserContext";
 
 
 const UserProvider = (props) => {
-     const [token, setToken] = useState("");
+     const [token, setToken] = useState(null);
      
 
     return(

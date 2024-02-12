@@ -3,9 +3,10 @@
 
 
   @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+  
 
 
-*{
+*,*::before,*::after{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -71,6 +72,7 @@ nav{
   position: sticky;
   top: 0px;
   height: 100px;
+  z-index: 1;
   
 
 }
@@ -84,12 +86,9 @@ nav>div>p{
   font-family: 'Lato', sans-serif;
   font-weight: 40px;
   font-size: 20px;
-}
-nav>div>p:hover{
-  text-decoration: underline;
   cursor: pointer;
-  
 }
+
 
 .hd-text{
   font-size: 50px;
@@ -106,6 +105,10 @@ nav>div>p:hover{
   background-color: white;
  
   height: 80px;
+  
+
+
+  
 }
 .footer>div>p{
   padding-inline: 20px;
@@ -120,4 +123,380 @@ nav>div>p:hover{
  color: rgb(186, 178, 178);
   cursor: pointer;
   
+}
+.navlink{
+  text-decoration: none;
+  color: black;
+}
+
+nav a.active{
+  color: rgb(119,145,195);
+}
+
+nav a{
+  position: relative;
+}
+nav a::after{
+  content:" ";
+  position: absolute;
+  background-color:rgb(119,145,195);
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+
+
+nav a:hover::after{
+  width: 100%;
+}
+.card{
+  cursor: pointer;
+  transition: transform linear 0.25s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.card:hover{
+  transform: scale(1.02,1.02);
+}
+.allPostsHeader{
+  margin-inline: 40%;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-family:Arial, Helvetica, sans-serif;
+  color: rgb(37, 55, 171);
+}
+#parentScrollDiv::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+#parentScrollDiv::-webkit-scrollbar-track {
+  background-color: rgb(231, 233, 239);
+}
+
+/* Handle */
+#parentScrollDiv::-webkit-scrollbar-thumb {
+  background: #5484c7;
+}
+
+/* Handle on hover */
+#parentScrollDiv::-webkit-scrollbar-thumb:hover {
+  background: rgb(37, 106, 233);
+}
+
+:root {
+  --border-width: 7px;
+}
+
+.sec-loading {
+  height: 15vh;
+  width: 90vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sec-loading .one {
+  height: 80px;
+  width: 80px;
+  border: var(--border-width) solid rgb(19, 12, 12);
+  transform: rotate(45deg);
+  border-radius: 0 50% 50% 50%;
+  position: relative;
+  animation: move 0.5s linear infinite alternate-reverse;
+}
+.sec-loading .one::before {
+  content: "";
+  position: absolute;
+  height: 55%;
+  width: 55%;
+  border-radius: 50%;
+  border: var(--border-width) solid transparent;
+  border-top-color: rgb(25, 20, 20);
+  border-bottom-color: rgb(17, 12, 12);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes move {
+  to {
+    transform: translateY(15px) rotate(45deg);
+  }
+}
+
+
+
+input[type=file]::file-selector-button {
+ 
+  border: none;
+  background: #084cdf;
+  padding: 5px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+input[type=file]::file-selector-button:hover {
+  background: #0d45a5;
+}
+
+
+.form-signin {
+ 
+  max-width: 330px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  background-color: #4475e1;
+  position: fixed;
+  top: -500px;
+  left: 40vw;
+  transition: top linear 0.8s;
+  z-index: 1;
+}
+.form-signin h1 {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+  margin-top: 0px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  color: #eeeaea;
+  padding: 15px;
+  text-align: center;
+}
+.form-signin form {
+  padding: 15px;
+}
+.form-signin form .btn {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+.form-signin form .btn:hover, .form-signin form .btn:focus {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+}
+.form-signin form .form-control:focus {
+  border-color: #ced4da;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+.form-signin .copyright {
+  text-align: center;
+  line-height: 50px;
+  
+}
+.form-signin .form-control {
+  background: rgba(255, 255, 255, 0.9);
+}
+.form-signin .form-check {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.65);
+}
+.form-signin .form-check label {
+  font-size: 0.9em;
+}
+.form-signin .form-check input {
+  margin-right: 0.5em;
+}
+.form-signin .form-check input:checked {
+  background-color: #9ce060;
+  border-color: #81c63f;
+}
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+.form-signin input[type=email] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type=password] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.bg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: radial-gradient(circle at 30% 86%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 8%, transparent 8%, transparent 92%), radial-gradient(circle at 55% 100%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 8%, transparent 8%, transparent 92%), radial-gradient(circle at 40% 75%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 7% 99%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 69% 76%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 2% 35%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 14% 48%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 28% 87%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 65% 14%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 51% 36%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 6% 93%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 4%, transparent 4%, transparent 96%), linear-gradient(135deg, #17e9ad, #1d18d0);
+}
+.form-floating{
+  margin-bottom: 5px;
+}
+
+
+
+/* CSS */
+.button-8 {
+  background-color: #e1ecf4;
+  border-radius: 3px;
+  border: 1px solid #7aa7c7;
+  box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #39739d;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+  position: absolute;
+  top: 105px;
+}
+
+.button-8:hover,
+.button-8:focus {
+  background-color: #b3d3ea;
+  color: #2c5777;
+}
+
+.button-8:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.button-8:active {
+  background-color: #a0c7e4;
+  box-shadow: none;
+  color: #2c5777;
+}
+.myProfile-h1{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12vh;
+  background-image: url("./icons/hd-bg.jpg");
+  background-position: center;
+  color: white;
+  margin-top: 5px;
+  font: 800 19px Lato, sans-serif;
+}
+.delete-btn{
+  width: 25px;
+  height:25px;
+  position:absolute;
+  top:2px;
+  right:2px;
+}
+.update-btn{
+  width: 25px;
+  height:25px;
+  position:absolute;
+  top:2px;
+  right: 33px;
+ 
+}
+
+.all-posts{
+  min-height: 70vh;
+}
+.all-posts>div{
+  max-height: 20rem;
+}
+
+.upd-card{
+  margin: 25vh 40vw;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+
+/* CSS */
+.button-21 {
+  align-items: center;
+  appearance: none;
+  background-color: #3EB2FD;
+  background-image: linear-gradient(1deg, #4F58FD, #149BF3 99%);
+  background-size: calc(100% + 20px) calc(100% + 20px);
+  border-radius: 100px;
+  border-width: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: CircularStd,sans-serif;
+  font-size: 1rem;
+  height: auto;
+  justify-content: center;
+  line-height: 1.5;
+  padding: 4px 8px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color .2s,background-position .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.button-21:active,
+.button-21:focus {
+  outline: none;
+}
+
+.button-21:hover {
+  background-position: -20px -20px;
+}
+
+.button-21:focus:not(:active) {
+  box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
+}
+
+
+#logout-button {
+  
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  transition:background-color linear 0.35s;
+  border-radius: 5px;
+  background-color: lightgray;
+  color: rgb(82, 79, 79);
+  position: absolute;
+  top: 105px;
+  left: 90px;
+
+}
+#logout-button:hover{
+  background-color:rgb(199, 12, 12);
+  color:white;
+  cursor:pointer;
 }

@@ -45,14 +45,15 @@ const Login = () => {
                
                 setMessage(response.data.message)
                
-                setToken(response.data.data.token)
+                
                 // add token to localstorage:
-                let jsonToken = JSON.stringify(response.data.data.token)
-                localStorage.setItem("token", jsonToken)
+              
+                setToken(response.data.data.token);
+                localStorage.setItem("token", response.data.data.token)
 
                 setUser({email:"",password:""})
                 // alert("Login Successful")
-                setTimeout(()=>navigate("/home"), 2000)
+                setTimeout(()=>navigate("/home"), 1000)
                 // navigate("/dashboard")
               }
             catch(error){
@@ -110,6 +111,10 @@ const Login = () => {
                 />
                 <br />
                 <button type="submit">Submit</button>
+
+                {
+        message && <h2>{message}</h2>
+    }
         </form>
        
         </div>
