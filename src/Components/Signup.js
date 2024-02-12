@@ -7,7 +7,7 @@ import plant from "../icons/plant.png"
 import leaf from "../icons/leaf.png"
 
 
-const Signup = ()=>{
+const SignUp = ()=>{
     const navigate = useNavigate();
     useEffect(()=>{
         if(localStorage.getItem("token")!==null){
@@ -98,4 +98,4 @@ const Signup = ()=>{
    
    )
 }
-export default Signup;
+export default SignUp;
