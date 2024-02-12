@@ -13,7 +13,7 @@ const Profile = ()=>{
     const [posts,setPosts] = useState([]);
     const [updateObj,setUpdateObj] = useState({});
   
-    const token =   JSON.parse(localStorage.getItem("token"));
+    const token =   localStorage.getItem("token");
     const navigate = useNavigate();
     const loader = useRef();
     

@@ -5,7 +5,7 @@ const Update=()=>{
     const location = useLocation();
     const navigate = useNavigate();
     const [text,setText] = useState(location.state.postText);
-    const token = JSON.parse(localStorage.getItem("token"));
+    const token = localStorage.getItem("token");
     async function handleUpdate(){
         try{
         const response=await axios.put(`https://instagram-express-app.vercel.app/api/post/update/${location.state.id}`,{

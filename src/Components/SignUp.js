@@ -46,10 +46,10 @@ const SignUp = ()=>{
              setToken(res.data.data.token);
            
             setUser({name:"",password:"",confirmPassword:"",email:""});
-            localStorage.setItem("token",JSON.stringify(res.data.data.token));
+            localStorage.setItem("token",res.data.data.token);
             setTimeout(()=>{
                 navigate('/home');
-             },500);
+             },300);
         }
         catch(error){
             setMessage(error.response.data.message);
